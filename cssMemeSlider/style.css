@@ -6,17 +6,17 @@
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: #2b2b2b;
+  background-color: #2b2b2b;
 }
 
 input {
-	display: none;
+  display: none;
 }
 
 .container {
@@ -24,91 +24,86 @@ input {
 }
 
 .slider-wrapper {
-	max-width: 40rem;
-	width: 100%;
-	padding: 1.5rem 1.5rem;
-	margin: 0 auto;
+  max-width: 40rem;
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  margin: 0 auto;
 }
 
 .slider {
-	width: 100%;
-	display: flex;
-	flex-direction: column;	
-	gap: 2rem;
-	overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;	
+  gap: 2rem;
+  overflow-x: hidden;
 }
 
 .slider-gallery {
   display: flex;
-	flex-wrap: nowrap;
-	width: 100%;
-	transition: 1s;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: 1s;
 }
 
 .img-wrapper {
-	flex-shrink: 0;
-	width: 100%;
+  flex-shrink: 0;
+  width: 100%;
 }
 
 .slider-gallery img {
-	width: 100%;
-	height: 100%;
-	border-radius: 1.2rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
 }
 
 .bottom {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .titles-wrapper {
-	display: flex;
-	overflow: hidden;
-	width: 65%;
+  display: flex;
+  overflow: hidden;
+  width: 65%;
 }
 
 .meme-titles {
-	display: flex;
-	transition: 1s;
+  display: flex;
+  width: 100%;
+  transition: 1s;
 }
 
 .meme-title {
-	display: flex;
-	flex-shrink: 0;
-	width: 100%;
-	color: white;
-	font-size: 1.3rem;
-	font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  color: white;
+  font-size: 1.3rem;
+  font-family: 'Nunito', sans-serif;
 }
 
 .dots-wrapper {
-	display: flex;
+  display: flex;
 }
 
 .dot-area {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 1.8rem;
-	height: 1.8rem;
-	cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
 }
 
 .dot {
-	width: 0.9rem;
+  width: 0.9rem;
   height: 0.9rem;
   margin: auto;
   border-radius: 50%;
-	background-color: rgb(121, 121, 255);
+  background-color: rgb(121, 121, 255);
   border: 0.125rem solid rgb(121, 121, 255);
-	transition: .3s;
-}
-
-
-.dot-area:hover .dot {
-	background-color:	white;
-	border: 0.125rem solid white;
+  transition: .3s;
 }
 
 #meme1:checked ~ .slider-gallery,
@@ -142,35 +137,47 @@ input {
 #meme3:checked ~ .bottom .dots-wrapper label[for='meme3'] .dot,
 #meme4:checked ~ .bottom .dots-wrapper label[for='meme4'] .dot,
 #meme5:checked ~ .bottom .dots-wrapper label[for='meme5'] .dot {
-	background-color: transparent;
+  background-color: transparent;
 }
 
-#meme1:checked ~ .bottom .dots-wrapper label[for='meme1']:hover .dot,
-#meme2:checked ~ .bottom .dots-wrapper label[for='meme2']:hover .dot,
-#meme3:checked ~ .bottom .dots-wrapper label[for='meme3']:hover .dot,
-#meme4:checked ~ .bottom .dots-wrapper label[for='meme4']:hover .dot,
-#meme5:checked ~ .bottom .dots-wrapper label[for='meme5']:hover .dot {
-	border: 0.125rem solid white;
+@media (hover: hover) {
+  .dot-area:hover .dot {
+    background-color: white;
+    border: 0.125rem solid white;
+  }
+
+  #meme1:checked ~ .bottom .dots-wrapper label[for='meme1']:hover .dot,
+  #meme2:checked ~ .bottom .dots-wrapper label[for='meme2']:hover .dot,
+  #meme3:checked ~ .bottom .dots-wrapper label[for='meme3']:hover .dot,
+  #meme4:checked ~ .bottom .dots-wrapper label[for='meme4']:hover .dot,
+  #meme5:checked ~ .bottom .dots-wrapper label[for='meme5']:hover .dot {
+    border: 0.125rem solid white;
+  }
 }
 
 @media (max-width: 767px) {
-	.bottom {
-		flex-direction: column-reverse;
-		align-items: flex-start;
-		gap: 1.5rem;
-	}
+  .bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
 
-	.dots-wrapper {
-		align-self: center;
-	}
+  .dots-wrapper {
+    align-self: center;
+  }
 
-	.titles-wrapper {
-		width: 100%;
-	}
+  .titles-wrapper {
+    width: 100%;
+  }
 }
 
-@media (max-width: 434px) {
-	.meme-title {
-		font-size: max(1.3rem - (434px - 100vw) * 0.1, 1rem);
-	}
+@media (max-width: 364px) {
+  .meme-titles {
+    width: 100%;
+  }
+	
+  .meme-title {
+    width: 100%;
+    font-size: max(1.3rem - (22.75rem - 100vw) * 0.1, 1.1rem);
+  }
 }
