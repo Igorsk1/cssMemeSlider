@@ -70,7 +70,6 @@ input {
 
 .meme-titles {
   display: flex;
-  width: 100%;
   transition: 1s;
 }
 
@@ -172,12 +171,7 @@ input {
 }
 
 @media (max-width: 364px) {
-  .meme-titles {
-    width: 100%;
-  }
-	
   .meme-title {
-    width: 100%;
     font-size: max(1.3rem - (22.75rem - 100vw) * 0.1, 1.1rem);
   }
 }
