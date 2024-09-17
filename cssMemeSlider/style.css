@@ -65,7 +65,7 @@ input {
 .titles-wrapper {
   display: flex;
   overflow: hidden;
-  width: 70%;
+  width: 63%;
 }
 
 .meme-titles {
@@ -130,7 +130,6 @@ input {
   transform: translateX(-400%);
 }
 
-
 #meme1:checked ~ .bottom .dots-wrapper label[for='meme1'] .dot,
 #meme2:checked ~ .bottom .dots-wrapper label[for='meme2'] .dot, 
 #meme3:checked ~ .bottom .dots-wrapper label[for='meme3'] .dot,
@@ -152,6 +151,11 @@ input {
   #meme5:checked ~ .bottom .dots-wrapper label[for='meme5']:hover .dot {
     border: 0.125rem solid white;
   }
+}
+
+.dot-area:active .dot {
+	background-color: rgb(121, 121, 255);
+	border: 0.125rem solid rgb(121, 121, 255);
 }
 
 @media (max-width: 767px) {
