@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('./fonts/nunito-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2b2b2b;
+}
+
+input {
+  display: none;
+}
+
+.container {
+  width: 100%;
+}
+
+.slider-wrapper {
+  max-width: 40rem;
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  margin: 0 auto;
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  flex-direction: column;	
+  gap: 2rem;
+  overflow-x: hidden;
+}
+
+.slider-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: 1s;
+}
+
+.img-wrapper {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.slider-gallery img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titles-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 63%;
+}
+
+.meme-titles {
+  display: flex;
+  transition: 1s;
+}
+
+.meme-title {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  color: white;
+  font-size: 1.3rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.dots-wrapper {
+  display: flex;
+}
+
+.dot-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+}
+
+.dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: auto;
+  border-radius: 50%;
+  background-color: rgb(121, 121, 255);
+  border: 0.125rem solid rgb(121, 121, 255);
+  transition: .3s;
+}
+
+#meme1:checked ~ .slider-gallery,
+#meme1:checked ~ .bottom > .titles-wrapper > .meme-titles {
+  transform: translateX(0);
+}
+
+#meme2:checked ~ .slider-gallery,
+#meme2:checked ~ .bottom > .titles-wrapper > .meme-titles {
+  transform: translateX(-100%);
+}
+
+#meme3:checked ~ .slider-gallery,
+#meme3:checked ~ .bottom > .titles-wrapper > .meme-titles {
+  transform: translateX(-200%);
+}
+
+#meme4:checked ~ .slider-gallery,
+#meme4:checked ~ .bottom > .titles-wrapper > .meme-titles {
+  transform: translateX(-300%);
+}
+
+#meme5:checked ~ .slider-gallery,
+#meme5:checked ~ .bottom > .titles-wrapper > .meme-titles {
+  transform: translateX(-400%);
+}
+
+#meme1:checked ~ .bottom .dots-wrapper label[for='meme1'] .dot,
+#meme2:checked ~ .bottom .dots-wrapper label[for='meme2'] .dot, 
+#meme3:checked ~ .bottom .dots-wrapper label[for='meme3'] .dot,
+#meme4:checked ~ .bottom .dots-wrapper label[for='meme4'] .dot,
+#meme5:checked ~ .bottom .dots-wrapper label[for='meme5'] .dot {
+  background-color: transparent;
+}
+
+@media (hover: hover) {
+  .dot-area:hover .dot {
+    background-color: white;
+    border: 0.125rem solid white;
+  }
+
+  #meme1:checked ~ .bottom .dots-wrapper label[for='meme1']:hover .dot,
+  #meme2:checked ~ .bottom .dots-wrapper label[for='meme2']:hover .dot,
+  #meme3:checked ~ .bottom .dots-wrapper label[for='meme3']:hover .dot,
+  #meme4:checked ~ .bottom .dots-wrapper label[for='meme4']:hover .dot,
+  #meme5:checked ~ .bottom .dots-wrapper label[for='meme5']:hover .dot {
+    border: 0.125rem solid white;
+  }
+}
+
+.dot-area:active .dot {
+	background-color: rgb(121, 121, 255);
+	border: 0.125rem solid rgb(121, 121, 255);
+}
+
+@media (max-width: 767px) {
+  .bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .dots-wrapper {
+    align-self: center;
+  }
+
+  .titles-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 364px) {
+  .meme-title {
+    font-size: max(1.3rem - (22.75rem - 100vw) * 0.1, 1.1rem);
+  }
+}
